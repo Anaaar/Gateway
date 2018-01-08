@@ -58,10 +58,10 @@ public class StorageThingspeak implements ISTORE,Runnable {
 				
 				switch(Id_send){ 
 				case 0: // 0 envoie pour tous les canaux
-				//	broadMultipleData(valeurs_concatenees,JsonParametres);
+					broadMultipleData(valeurs_concatenees,JsonParametres);
 					break;
 				default: // Envoie pour un canal specifique
-				//	sendMultipleData(Id_send,valeurs_concatenees,JsonParametres);
+					sendMultipleData(Id_send,valeurs_concatenees,JsonParametres);
 					break;
 				}
 				Thread.sleep(15000); // Met en veille pour 15 secondes
@@ -100,7 +100,7 @@ public class StorageThingspeak implements ISTORE,Runnable {
 		}
 		entry.setField(i+1, Module );
 
-		System.out.println(" |  Send Multiple broadcast Tihngspeak data |");			
+		System.out.println(" |  Send Multiple broadcast Thingspeak data |");			
 		for(i=0;i< Parametres.channel.length;i++){
 
 			try {					
@@ -151,7 +151,7 @@ public class StorageThingspeak implements ISTORE,Runnable {
 		if(i>=Parametres.channel.length)
 		{
 			i--;
-			System.out.println("Error, mauvaise channel! ");
+			System.out.println("Error, mauvais channel! ");
 			return;
 		}	
 

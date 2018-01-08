@@ -87,8 +87,8 @@ public class JsonDecoder {
 	            	db[i].setSERVER_URL((String) o2.get("url")); 
 	            	System.out.println("url = "+ db[i].SERVER_URL);
 	            	
-	            	db[i].setSERVER_PORT((String) o2.get("port"));	
-	            	System.out.println("url = "+ db[i].SERVER_PORT);
+	            	//db[i].setSERVER_PORT((String) o2.get("port"));	
+	            	//System.out.println("url = "+ db[i].SERVER_PORT);
 	            	
 	            	if (Boolean.parseBoolean((String) o2.get("needproxy")))
 	            	{
@@ -99,7 +99,11 @@ public class JsonDecoder {
 	            	}
 	            	else
 	            	{
+	            		db[i].PROXY_NEEDED = false;
+	            		db[i].setPROXY_URL(pROXY_URL);
+	            		db[i].setPROXY_PORT(pROXY_PORT);
 	            		db[i].setExtraInfo("local");
+	            		
 	            	}
 	 	            
 	            		System.out.println("Database: url="+db[i].getSERVER_URL()+" port="+db[i].getSERVER_PORT() + " needproxy="+db[i].PROXY_NEEDED+" URL proxy="+db[i].getPROXY_URL()+" port_proxy="+db[i].getPROXY_PORT());

@@ -118,7 +118,7 @@ public class DataBaseConnexion{// extends RT_TestThread{ // **MODIF** extend Mai
 		final String strURL;
 
 		if (SERVER_PORT.equals(""))
-			strURL = "http://"+SERVER_URL+"/sensenv/ConnectDatabaseTMP.php";
+			strURL = "http://"+"hamouchr.free.fr"+"/sensenv/ConnectDatabaseTMP.php";
 		else 
 			strURL = "http://"+SERVER_URL+":"+SERVER_PORT+"/sensenv/ConnectDatabaseTMP.php";
 		
@@ -133,7 +133,10 @@ public class DataBaseConnexion{// extends RT_TestThread{ // **MODIF** extend Mai
 			connection = (HttpURLConnection) new URL(strURL+"?"+uRLComplement).openConnection(proxy);
 			}
 			else
-				{connection = (HttpURLConnection) new URL(strURL+"?"+uRLComplement).openConnection();
+				{
+				connection = (HttpURLConnection) new URL(strURL+"?"+uRLComplement).openConnection();
+				// CODE A IMPLEMENTER POUR NO PROXY
+				//System.out.println("****** "+strURL);
 				
 				}
 			

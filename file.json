@@ -1,0 +1,21 @@
+[   
+	{ 
+        "SerialPort":"COM4",
+        "Device":"XBEE",
+        "Capteurs": {"1":"2", "2":"10", "3":"5"}
+        "Proxy": {"url":"proxy.esiee.fr", "port":"3128"} 				        
+        "DataBase":[
+					{
+					 "url":"hamouchr.free.fr", "port":"", "needproxy":"false"
+					}	
+		           ]
+		 "Thingspeak":[
+		 
+		        {
+					     "channelID":"378501", "writekey":"WW53UW1L57G3I5OF", "readkey":"IBO6X4AP3ZAGKD1H", "channel_public":"true"
+						}
+						
+		 			  
+     ]       
+    }
+]   

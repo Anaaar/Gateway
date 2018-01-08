@@ -150,7 +150,7 @@ public class Test64bits implements Runnable{
 				out1.broadData(donnees_int, jDecoder); // Utilise le moetode broadData pour envoyer par les bases de donnees
 			}
 			else
-				System.out.println("Message Vide");
+				System.out.println("No data from sensor");
 			// Si il a reçu un commande pour reconfigurer a distance e le dernier message reçu c'etait du module pour configurer
 			if(dataBase.cmd != 0 && donnees_int != null && dataBase.module == donnees_int[0]){ 
 				message = new short[dataBase.message.length];
@@ -212,7 +212,7 @@ public class Test64bits implements Runnable{
 	// Creer un nouveau channel Thingspeak
 	public static HttpResponse http() {
 
-		@SuppressWarnings({ "resource" })
+		@SuppressWarnings({ "resource" }) 
 		HttpClient httpclient = new DefaultHttpClient();
 		HttpPost httppost = new HttpPost("https://api.thingspeak.com/channels.json");
 
