@@ -76,8 +76,9 @@ public class Test64bits implements Runnable{
 		//ISTORE out = new StorageThingspeak(queue,jDecoder,Id_DB)
 
 
-		Unirest.setProxy(new HttpHost("proxy.esiee.fr", 3128)); // Change le proxy pour être possible utiliser l'internet
+		
 		dataBase = new LocalDB(2828); // Cree une base de donnees avec le port 2828
+		
 		Thread In = new Thread(new Test64bits()); //Cree une Thread pour executer l'aplication de la calsse Test64bits
 		In.start(); // Initialise la Thread ci-dessus
 		//		//short[] msg = {0x54, 0x45, 0x53, 0x54 ,0x45, 0x20, 0x31}; // "TESTE 1"
@@ -128,6 +129,8 @@ public class Test64bits implements Runnable{
 		case "XBEE":
 			in = new ComXbee(jDecoder);
 			break;
+		case "EnOcean":
+			in = new ComEnOcean();
 		default:
 			System.out.println("Device inconnu: "+jDecoder.device);
 			break;

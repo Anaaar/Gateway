@@ -1,5 +1,5 @@
 package testInterpreter;
-/*
+
 import comlora.ILORA;
 
 public class ComEnOcean implements ICOM{
@@ -31,4 +31,3 @@ public class ComEnOcean implements ICOM{
 	
 
 }
-*/

@@ -10,8 +10,11 @@ import java.net.Proxy;
 import java.net.URL;
 import java.util.ArrayList;
 
+import org.apache.http.HttpHost;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+
+import com.mashape.unirest.http.Unirest;
 
 
 /**
@@ -129,15 +132,13 @@ public class DataBaseConnexion{// extends RT_TestThread{ // **MODIF** extend Mai
 		HttpURLConnection connection=null;
 		try {
 			if(PROXY_NEEDED){
-			proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(PROXY_URL, PROXY_PORT));
-			connection = (HttpURLConnection) new URL(strURL+"?"+uRLComplement).openConnection(proxy);
+				Unirest.setProxy(new HttpHost("proxy.esiee.fr", 3128)); // Change le proxy pour être possible utiliser l'internet
+				proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(PROXY_URL, PROXY_PORT));
+				connection = (HttpURLConnection) new URL(strURL+"?"+uRLComplement).openConnection(proxy);
 			}
 			else
 				{
 				connection = (HttpURLConnection) new URL(strURL+"?"+uRLComplement).openConnection();
-				// CODE A IMPLEMENTER POUR NO PROXY
-				//System.out.println("****** "+strURL);
-				
 				}
 			
 			

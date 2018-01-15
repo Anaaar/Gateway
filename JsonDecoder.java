@@ -50,6 +50,8 @@ public class JsonDecoder {
 	         {
 	           JSONObject person = (JSONObject) o;
 	           
+	   // PAS LIRE PROXY DANS PARSER JSON
+	           
 	           o2 = (JSONObject) person.get("Proxy");
 	           pROXY_URL = (String) o2.get("url");
 	           pROXY_PORT = Integer.parseInt((String) o2.get("port"));	            		            	
@@ -96,25 +98,28 @@ public class JsonDecoder {
 	            		db[i].setPROXY_URL(pROXY_URL);
 	            		db[i].setPROXY_PORT(pROXY_PORT);
 	            		db[i].setExtraInfo("distant");	
-	            	}
-	            	else
-	            	{
-	            		db[i].PROXY_NEEDED = false;
-	            		db[i].setPROXY_URL(pROXY_URL);
-	            		db[i].setPROXY_PORT(pROXY_PORT);
-	            		db[i].setExtraInfo("local");
 	            		
-	            	}
-	 	            
 	            		System.out.println("Database: url="+db[i].getSERVER_URL()+" port="+db[i].getSERVER_PORT() + " needproxy="+db[i].PROXY_NEEDED+" URL proxy="+db[i].getPROXY_URL()+" port_proxy="+db[i].getPROXY_PORT());
 	            		i++;
+	            	}
+	            	else		// code ajouté
+	            	{
+	            		db[i].PROXY_NEEDED = false; //
+	            		db[i].setExtraInfo("wifi"); //
+	            		
+	    
+	            		System.out.println("Database: url="+db[i].getSERVER_URL()+" port="+db[i].getSERVER_PORT());
+	            		i++;
+	            	}
+	 	            
+	            		
 	            }
 	            
 	         // loop array Thingspeak Channels
 	            JSONArray carsThingSpeak = (JSONArray) person.get("Thingspeak");
 	            System.out.println("size = "+carsThingSpeak.size());
 	            channel = new Channel[carsThingSpeak.size()];
-	            channel = new Channel[carsThingSpeak.size()];
+	            //channel = new Channel[carsThingSpeak.size()];
 	            @SuppressWarnings("unchecked")
 				Iterator<JSONObject> iterator_channel = carsThingSpeak.iterator();
 	            i =0;

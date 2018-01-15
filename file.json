@@ -9,13 +9,14 @@
 					 "url":"hamouchr.free.fr", "port":"", "needproxy":"false"
 					}	
 		           ]
-		 "Thingspeak":[
-		 
-		        {
+		 "Thingspeak":[	
+		 		  {
 					     "channelID":"378501", "writekey":"WW53UW1L57G3I5OF", "readkey":"IBO6X4AP3ZAGKD1H", "channel_public":"true"
 						}
 						
-		 			  
+				 {
+					     "channelID":"350941", "writekey":"UJF7D40ZO2HYODMF", "readkey":"1XOR78890OP731BE", "channel_public":"true"
+					}	
      ]       
     }
 ]   
